@@ -1,0 +1,17 @@
+#rad-corner-ribbon{
+	/*stick the ribbon to the top corner of the browser*/
+	position: fixed;
+	top:0;
+	left:0;
+}
+/*push it down a bit when the admin bar is showing*/
+.admin-bar #rad-corner-ribbon{
+	top:30px;
+}
+
+/*hide it on small screens*/
+@media screen and (max-width:600px){
+	#rad-corner-ribbon{
+		display:none;
+	}
+}
