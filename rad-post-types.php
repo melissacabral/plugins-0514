@@ -29,7 +29,28 @@ function rad_setup_products(){
 			'add_new_item' 	=> 'Add New Product',
 			),
 	) );
-}
+
+	// Add taxonomies to sort by brand and feature
+	register_taxonomy( 'brand', 'product', array(
+		'hierarchical' 	=> true,    //parent/child relationships, like categories
+		'labels' 		=>	array(
+			'name' 			=> 'Brands',
+			'singular_name' => 'Brand',
+			'add_new_item' 	=> 'Add New Brand',
+			'search_items'  => 'Search Brands',
+			'parent_item' 	=> 'Parent Brand',
+		),
+	) );
+	register_taxonomy( 'feature', 'product', array(
+		'hierarchical' 	=> false,    //flat list, like tags
+		'labels' 		=> array(
+			'name' 			=> 'Features',
+			'singular_name' => 'Feature',
+			'add_new_item' 	=> 'Add New Feature',
+			'search_items'  => 'Search Features',
+		),
+	) );
+}//end  function rad_setup_products
 
 /**
  * Flush Permalinks when this plugin activates
